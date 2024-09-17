@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#l-side{
+  width: 25%;
+  height: 100%  ;
+  background-color: #89909F;
+  padding: 15px 10px;
+}
+#l-side h1{
+  font-family: 'Architects Daughter', cursive;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-bottom: 1px solid black;
+}
+
+#fileicons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+#fileicons h4{
+  text-transform: capitalize;
+  font-weight: 400;
+}
+#icons{
+  display: flex;
+  gap: 10px ;
+}
+#icons i{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#files{
+  margin: 5px 25px;
+  position: relative;
+  overflow: hidden;
+}
+#files a{
+ display: flex;
+ 
+  
+}
+#edit-icons{
+  position: absolute;
+  display: flex;
+  right: -19%;
+  gap: 15px;
+  border-left: 2px solid black;
+  padding-left: 15px;
+  transition: cubic-bezier(0.19, 1, 0.22, 1)2s;
+}
+.file:hover #edit-icons{
+  position: absolute;
+  display: flex;
+  right: 5%;
+}
+.file{
+  cursor: pointer;
+  padding: 12px 20px;
+  background-color: rgba(240, 248, 255, 0.267);
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+
+
+#l-side form{
+  display: none;
+  
+}
+#l-side form input{
+  /* width: 90%;
+ margin-left: 20px;
+ margin-right: 20px; */
+ width: 95%;
+ padding: 8px 15px;
+ margin-top: 7px;
+ font-size: 15px;
+ background-color:#ffffffbe;
+ outline: none;
+ border: none;
+ border-radius:3px;
+ margin: 0px 10px;
+}
+
+#l-side form input::placeholder {
+  opacity: 0.9;
+  text-transform: capitalize;
+  
+  
+}
+
+#r-side{
+  width: 75%;
+  height: 100%;
+  overflow-x: hidden;
+  
+}
+#r-side h2 a{
+ text-decoration: none;
+  
+}
+#right-nav h2{
+  width: fit-content;
+  padding: 10px 15px;
+  background-color: #89909f7a;
+  margin: 15px 15px;
+  font-size: 17px;
+}
+#right-nav h2 i{
+  padding: 2px;
+  margin-left: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+}
+#right-nav h2 i:hover{
+  background-color: aliceblue;
+ cursor: pointer;
+}
+textarea{
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  padding: 15px;
+  font-family: "Consolas";
+  outline: none;
+  border: 2px solid black ;
+}
+textarea::placeholder{
+  text-transform:capitalize ;
+}
+#r-side form{
+  width: 100%;
+  height: calc(100% - 75px);
+}
+#buttonsave{
+  position: absolute;
+  top: 4.6%;
+  right: 5%;
+  padding: 10px 15px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 15px;
+  text-transform: capitalize;
+  background-color: #89909f7a;
+  font-weight: 500;
+  
+}
+#deletebtn{
+  position: absolute;
+  top: 4.6%;
+  right: 12%;
+  padding: 10px 15px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 15px;
+  text-transform: capitalize;
+  background-color: #89909f7a;
+  font-weight: 500;
+  
+}
+#buttonsave:hover{
+  background-color: aliceblue;
+  cursor: pointer;
+  
+}
+#files a{
+  color:black;
+  text-decoration: none;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="main">
+    <div id="l-side">
+      <h1>file manager</h1>
+      <div id="fileicons">
+        <h4>folder name</h4>
+
+        <div id="icons">
+          <div id="file-create"><i class="ri-file-add-line"></i></div>
+          <div id="folder-create"><i class="ri-folder-add-line"></i></div>
+          <div id="icon-3"><i class="ri-restart-line"></i></div>
+        </div>
+      </div>
+      <div id="forms1">
+        <form class="formcreation" id="fileform" action="/filecreate">
+          <input name="filename" type="text" placeholder="filename">
+        </form>
+        <form class="formcreation" id="folderform" action="/foldercreate">
+          <input name="foldername" type="text" placeholder="foldername">
+        </form>
+      </div>
+      <div id="files">
+        <% files.forEach(function(elem){ %>
+          <div class="file">
+            <% if(elem.isDirectory()){ %>
+              <i class="ri-folder-2-fill"></i>
+              <% } else { %>
+                <i class="ri-file-3-line"></i>
+                <% } %>
+                  <% if(elem.isDirectory()) { %>
+                    <%= elem.name %>
+                      <% } else { %>
+                        <a href="/file/<%= elem.name %>">
+                          <%= elem.name %>
+                            <!-- <div id="edit-icons">
+                                   <i class="ri-pencil-line"></i>
+                                   <i class="ri-delete-bin-line"></i>
+                                 </div> -->
+                        </a>
+                        <% } %>
+
+
+          </div>
+          <% }) %>
+      </div>
+    </div>
+    <div id="r-side">
+      <!-- <div id="right-nav">
+        <h2 class="opened-file">index.html <i class="ri-close-line"></i></h2>
+      </div>
+        <form action="" method="post">
+          <textarea name="" placeholder="enter your code here " ></textarea>
+          <input id="buttonsave" type="button" value="save file">
+        </form> -->
+      <h1>nothing here </h1>
+
+    </div>
+  </div>
+
+
+
+  <script>
+    var filecreateicon = document.querySelector("#file-create")
+    var foldercreateicon = document.querySelector("#folder-create")
+
+
+    function turnoffboth() {
+      var allelems = [...document.querySelectorAll(".formcreation")]
+      allelems.forEach(function (elem) {
+        elem.style.display = "none"
+      })
+    }
+    filecreateicon.addEventListener("click", function () {
+      turnoffboth();
+      document.querySelector("#fileform").style.display = "initial"
+    })
+    foldercreateicon.addEventListener("click", function () {
+      turnoffboth();
+      document.querySelector("#folderform").style.display = "initial"
+    })
+  </script>
+</body>
+
+</html>
